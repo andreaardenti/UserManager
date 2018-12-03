@@ -1,6 +1,9 @@
 var counter = 1;
 var users = [];
 
+exports.getUsers = function(){
+    return users;
+}
 
 exports.addUser = function(param1, param2) {
     var user = 
@@ -10,7 +13,7 @@ exports.addUser = function(param1, param2) {
         surname: param2,
     }
     users.push(user);
-    return user; 
+    //return user; 
 }
 
 exports.removeUser = function(param) {
@@ -32,12 +35,7 @@ exports.filterUserById = function(param) {
         if (users[i].id === param) {
             newArrayID.push(users[i]);
         }
-    }
-    if (newArrayID != undefined) {
-        return newArrayID;
-    } else {
-        return "User non present in database!";
-    }
+    } return newArrayID;
 }
 
 exports.filterUserByName = function(param) {
@@ -46,12 +44,11 @@ exports.filterUserByName = function(param) {
         if (users[i].name === param) {
             newArrayName.push(users[i]);
         }
-    }
-    if (newArrayName != undefined) {
-        return newArrayName;
-    } else {
-        return "User non present in database!";
-    }
+    } return newArrayName;
+}
+
+exports.count = function(){
+    return count.length;
 }
 
 this.reset();
